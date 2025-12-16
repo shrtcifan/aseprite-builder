@@ -1,6 +1,8 @@
 # aseprite-builder
 Build Aseprite using Github action
 
+**Note:** This workflow builds Aseprite for Windows only.
+
 # What should you do?
 - fork this repo
 - **enable workflow `Build and release Aseprite` in `Actions -- Workflows`**
