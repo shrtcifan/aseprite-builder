@@ -69,7 +69,6 @@ jobs:
           unzip Skia-Windows-Release-x64.zip -d skia
       - uses: aseprite/get-ninja@main
       - uses: ilammy/msvc-dev-cmd@v1
-        if: runner.os == 'Windows'
       - name: Generating Makefiles
         shell: bash
         working-directory: aseprite
@@ -80,7 +79,7 @@ jobs:
           export skia_arch=x64
 
           cmake -S . -B build -G Ninja \
-            -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
+            -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
             -DENABLE_TESTS=OFF \
             -DENABLE_SCRIPTING=$enable_scripting \
             -DENABLE_CCACHE=$enable_ccache \
